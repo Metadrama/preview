@@ -10,124 +10,130 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* Industrial Theme Base Styles */
+/* Monochromatic Industrial Theme */
 body {
-    background-color: rgb(2, 6, 23);
-    color: rgb(241, 245, 249);
+    background-color: #0a0a0a;
+    color: #e5e5e5;
     font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar for all elements */
+/* Custom Scrollbar - Monochrome */
 * {
     scrollbar-width: thin;
-    scrollbar-color: rgb(71, 85, 105) rgb(30, 41, 59);
+    scrollbar-color: #404040 #1a1a1a;
 }
 
 *::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
 }
 
 *::-webkit-scrollbar-track {
-    background: rgb(30, 41, 59);
-    border-radius: 3px;
+    background: #1a1a1a;
+    border-radius: 2px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background: rgb(71, 85, 105);
-    border-radius: 3px;
+    background: #404040;
+    border-radius: 2px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background: rgb(100, 116, 139);
+    background: #525252;
 }
 
-/* Canvas Grid Pattern */
+/* Canvas Grid Pattern - Monochrome */
 .canvas-grid {
-    background-color: #0f172a;
+    background-color: #0d0d0d;
     background-image:
-        radial-gradient(circle, #334155 1px, transparent 1px);
-    background-size: 16px 16px;
+        radial-gradient(circle, #262626 0.5px, transparent 0.5px);
+    background-size: 12px 12px;
     background-position: 0 0;
 }
 
 /* Snappy Animations */
 .transition-snappy {
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .transition-collapse {
-    transition: width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Widget Card Styles */
+/* Widget Card Styles - Monochrome with Slim Gaps */
 .widget-card {
-    background-color: rgba(30, 41, 59, 0.9);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgb(51, 65, 85);
-    border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .widget-card:hover {
-    border-color: rgb(71, 85, 105);
+    border-color: #404040;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .widget-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.75rem;
-    border-bottom: 1px solid rgb(51, 65, 85);
-    background-color: rgba(30, 41, 59, 0.5);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #222;
+    background-color: rgba(20, 20, 20, 0.7);
 }
 
-/* Sidebar Styles */
+/* Sidebar Styles - Monochrome */
 .sidebar-collapsed {
-    width: 48px;
+    width: 44px;
 }
 
 .sidebar-expanded {
-    width: 240px;
+    width: 220px;
 }
 
-/* Tab Bar Styles */
+/* Tab Bar Styles - Monochrome */
 .tab-active {
-    background-color: rgb(30, 41, 59);
-    color: rgb(56, 189, 248);
-    border-bottom: 2px solid rgb(56, 189, 248);
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-bottom: 1px solid #404040;
 }
 
 .tab-inactive {
-    background-color: rgb(15, 23, 42);
-    color: rgb(148, 163, 184);
-    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #0d0d0d;
+    color: #808080;
+    transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-inactive:hover {
-    color: rgb(226, 232, 240);
-    background-color: rgba(30, 41, 59, 0.5);
+    color: #cccccc;
+    background-color: rgba(26, 26, 26, 0.5);
 }
 
-/* Grid Stack Overrides */
+/* Grid Stack Overrides - Reduced Gaps */
+.grid-stack {
+    margin: -2px;
+}
+
 .grid-stack-item {
     transition: none;
+    padding: 2px;
 }
 
 .grid-stack-item-content {
     overflow: hidden;
 }
 
-/* Glow Effects */
+/* Glow Effects - Monochrome */
 .glow-primary {
-    box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
 }
 
 .glow-accent {
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
 }
 
 /* Compact Utilities */

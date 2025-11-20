@@ -1,8 +1,8 @@
-<!-- Collapsible Sidebar - VSCode Style -->
-<aside id="sidebar" class="sidebar-expanded bg-slate-900 border-r border-slate-800 flex flex-col transition-collapse overflow-hidden">
+<!-- Collapsible Sidebar - Monochrome VSCode Style -->
+<aside id="sidebar" class="sidebar-expanded bg-neutral-950 border-r border-neutral-900 flex flex-col transition-collapse overflow-hidden">
     <!-- Sidebar Header -->
-    <div class="flex items-center justify-between p-3 border-b border-slate-800">
-        <span class="font-medium text-sm text-slate-200 sidebar-text">Widgets</span>
+    <div class="flex items-center justify-between p-2.5 border-b border-neutral-900">
+        <span class="font-medium text-sm text-neutral-300 sidebar-text">Widgets</span>
         <button onclick="toggleSidebar()" class="text-slate-400 hover:text-slate-200 transition-snappy" title="Collapse">
             <svg id="collapse-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />

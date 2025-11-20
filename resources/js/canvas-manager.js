@@ -103,27 +103,35 @@ export function addWidget(type, options = {}) {
     widgetCounter++;
     const widgetId = `widget-${widgetCounter}`;
 
+    // Create widget without content first - GridStack escapes HTML in content
     const widgetConfig = {
         id: widgetId,
         w: options.w || template.width,
         h: options.h || template.height,
         x: options.x,
         y: options.y,
-        content: template.render(widgetId),
     };
 
-    grid.addWidget(widgetConfig);
+    const addedWidget = grid.addWidget(widgetConfig);
+
+    // CRITICAL FIX: Manually insert HTML using innerHTML after widget creation
+    // This prevents GridStack from escaping the HTML as text
+    if (addedWidget) {
+        const contentElement = addedWidget.querySelector('.grid-stack-item-content');
+        if (contentElement) {
+            contentElement.innerHTML = template.render(widgetId);
+        }
+    }
 
     // Animate widget appearance
     setTimeout(() => {
-        const widget = document.getElementById(widgetId);
-        if (widget) {
-            widget.style.opacity = '0';
-            widget.style.transform = 'scale(0.9)';
+        if (addedWidget) {
+            addedWidget.style.opacity = '0';
+            addedWidget.style.transform = 'scale(0.9)';
             setTimeout(() => {
-                widget.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
-                widget.style.opacity = '1';
-                widget.style.transform = 'scale(1)';
+                addedWidget.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+                addedWidget.style.opacity = '1';
+                addedWidget.style.transform = 'scale(1)';
             }, 10);
         }
     }, 10);
@@ -133,17 +141,20 @@ export function addWidget(type, options = {}) {
 window.removeWidget = function (widgetId) {
     if (!grid) return;
 
-    const widget = document.getElementById(widgetId);
-    if (widget) {
-        widget.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
-        widget.style.opacity = '0';
-        widget.style.transform = 'scale(0.9)';
+    // Find the grid item containing this widget
+    const allItems = grid.getGridItems();
+    const targetItem = Array.from(allItems).find(item => {
+        const content = item.querySelector('.grid-stack-item-content');
+        return content && content.querySelector(`#${widgetId}`);
+    });
+
+    if (targetItem) {
+        targetItem.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+        targetItem.style.opacity = '0';
+        targetItem.style.transform = 'scale(0.9)';
 
         setTimeout(() => {
-            const gridItem = widget.closest('.grid-stack-item');
-            if (gridItem) {
-                grid.removeWidget(gridItem);
-            }
+            grid.removeWidget(targetItem);
         }, 200);
     }
 };
@@ -175,9 +186,34 @@ function applyZoom() {
     }
 }
 
+// Scroll-to-Zoom Functionality
+function setupScrollToZoom() {
+    const canvasWrapper = document.getElementById('canvas-wrapper');
+    if (!canvasWrapper) return;
+
+    canvasWrapper.addEventListener('wheel', (e) => {
+        // Prevent default scrolling
+        e.preventDefault();
+
+        // Determine zoom direction
+        const delta = -Math.sign(e.deltaY);
+        const zoomAmount = delta * 0.05; // 5% per scroll tick
+
+        // Apply zoom
+        currentZoom = Math.min(Math.max(currentZoom + zoomAmount, 0.5), 2.0);
+        applyZoom();
+    }, { passive: false });
+
+    // Also disable normal scrolling completely on the wrapper
+    canvasWrapper.style.overflow = 'hidden';
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     initializeCanvas();
+
+    // Initialize scroll-to-zoom
+    setupScrollToZoom();
 
     // Add sample widgets for demo
     setTimeout(() => {

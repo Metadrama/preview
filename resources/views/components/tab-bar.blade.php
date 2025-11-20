@@ -1,8 +1,8 @@
-<!-- Canvas Tab Bar -->
-<div class="bg-slate-900 border-b border-slate-800 h-10 flex items-center overflow-x-auto scrollbar-thin">
+<!-- Canvas Tab Bar - Monochrome -->
+<div class="bg-neutral-950 border-b border-neutral-900 h-10 flex items-center overflow-x-auto">
     <div class="flex items-center h-full" id="tab-container">
         <!-- Tabs will be rendered here -->
-        <div class="tab tab-active flex items-center gap-2 px-4 h-full border-r border-slate-800 cursor-pointer transition-snappy" data-tab-id="1">
+        <div class="tab tab-active flex items-center gap-2 px-3 h-full border-r border-neutral-900 cursor-pointer transition-snappy" data-tab-id="1">
             <span class="text-sm">Dashboard 1</span>
             <button class="ml-2 hover:text-red-400 transition-snappy" onclick="closeTab(event, '1')">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
