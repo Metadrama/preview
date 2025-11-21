@@ -1,0 +1,126 @@
+@layer components {
+    .canvas-main {
+        @apply min-h-screen bg-base-200/80;
+    }
+
+    .canvas-stage {
+        @apply mx-auto w-full max-w-7xl;
+    }
+
+    .canvas-canvas {
+        @apply relative isolate w-full rounded-[28px] border border-base-content/10 bg-base-100/95 p-8 shadow-2xl ring-1 ring-white/5;
+    }
+
+    .canvas-canvas::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.35), transparent 55%);
+        opacity: 0.8;
+    }
+
+    /* Zoom wrapper for CSS zoom-based zooming */
+    .canvas-zoom-wrapper {
+        @apply relative z-[1];
+    }
+
+    /* Zoom controls */
+    .canvas-zoom-controls {
+        @apply fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-base-content/10 bg-base-100/95 p-2 shadow-xl ring-1 ring-white/5 backdrop-blur-sm;
+    }
+
+    .canvas-zoom-btn {
+        @apply flex h-8 w-8 items-center justify-center rounded-full border border-base-content/10 bg-base-100 text-base-content transition-all duration-150 hover:border-base-content/20 hover:bg-base-200 hover:shadow-md active:scale-95;
+    }
+
+    .canvas-zoom-btn:disabled {
+        @apply cursor-not-allowed opacity-40 hover:border-base-content/10 hover:bg-base-100 hover:shadow-none;
+    }
+
+    .canvas-zoom-display {
+        @apply min-w-[3.5rem] select-none text-center text-sm font-semibold tabular-nums text-base-content/70;
+    }
+
+    .canvas-shell {
+        @apply flex flex-col gap-8;
+    }
+
+    .canvas-panel {
+        @apply rounded-2xl border border-base-content/10 bg-base-100/90 p-5 shadow-sm ring-1 ring-white/5 transition-all duration-200 hover:-translate-y-0.5 hover:border-base-content/20 hover:shadow-lg;
+    }
+
+    .canvas-panel__header {
+        @apply flex items-center justify-between gap-3;
+    }
+
+    .canvas-panel__title {
+        @apply text-sm font-semibold uppercase tracking-wide text-base-content/60;
+    }
+
+    .canvas-panel__value {
+        @apply text-2xl font-semibold text-base-content;
+    }
+
+    .canvas-panel__trend {
+        @apply inline-flex items-center gap-1 rounded-full border border-success/20 bg-success/10 px-2.5 py-1 text-xs font-semibold text-success;
+    }
+
+    .canvas-panel__trend--down {
+        @apply border-error/20 bg-error/10 text-error;
+    }
+
+    .chart-preview {
+        @apply mt-4 h-48 rounded-2xl border border-base-content/10 bg-base-100/90 p-4 shadow-inner;
+    }
+
+    .chart-preview__grid {
+        @apply absolute inset-4 rounded-xl border border-base-content/5 bg-dot-12-s-1-base-content/10;
+    }
+
+    .chart-preview svg {
+        @apply relative z-[1] h-full w-full;
+    }
+
+    /* Gridstack enhancements */
+    .grid-stack-item-content {
+        @apply h-full w-full;
+    }
+
+    .grid-stack-item .canvas-panel {
+        @apply h-full flex flex-col;
+    }
+
+    .grid-stack-placeholder {
+        @apply rounded-2xl border border-primary/30 bg-base-100/70 backdrop-blur-sm shadow-xl ring-1 ring-white/10 transition-all duration-150;
+    }
+
+    .grid-stack-item.ui-draggable-dragging .canvas-panel {
+        @apply shadow-2xl border-base-content/20 scale-[1.01];
+    }
+
+    .grid-stack-item.ui-resizable-resizing .canvas-panel {
+        @apply shadow-2xl border-primary/40;
+    }
+
+    /* Visual grid guides during drag */
+    .grid-stack.grid-stack-animate .grid-stack-item.ui-draggable-dragging~.grid-stack-item,
+    .grid-stack:has(.ui-draggable-dragging) {
+        background-image:
+            repeating-linear-gradient(0deg,
+                transparent,
+                transparent calc(70px + 8px - 1px),
+                rgba(var(--bc) / 0.03) calc(70px + 8px)),
+            repeating-linear-gradient(90deg,
+                transparent,
+                transparent calc(8.333% - 1px),
+                rgba(var(--bc) / 0.03) 8.333%);
+        background-size: 100% calc(70px + 8px), 8.333% 100%;
+    }
+
+    /* Enhanced placeholder with grid alignment indicator */
+    .grid-stack:has(.ui-draggable-dragging) .grid-stack-placeholder {
+        @apply ring-2 ring-primary/50;
+    }
+}

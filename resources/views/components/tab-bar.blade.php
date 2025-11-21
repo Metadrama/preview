@@ -1,10 +1,10 @@
 <!-- Modern Glassmorphic Tab Bar -->
-<div class="glass border-b border-white/10 h-11 flex items-center overflow-x-auto shadow-sm">
+<div class="glass border-b theme-border h-11 flex items-center overflow-x-auto shadow-sm">
     <div class="flex items-center h-full" id="tab-container">
         <!-- Tabs will be rendered here -->
-        <div class="tab tab-active flex items-center gap-2 px-4 h-full border-r border-white/5 cursor-pointer group" data-tab-id="1">
+        <div class="tab tab-active flex items-center gap-2 px-4 h-full border-r theme-border-soft cursor-pointer group" data-tab-id="1">
             <span class="text-sm font-medium">Dashboard 1</span>
-            <button class="ml-1 opacity-0 group-hover:opacity-100 hover:text-error transition-smooth p-0.5 rounded hover:bg-white/10" onclick="closeTab(event, '1')">
+            <button class="ml-1 opacity-0 group-hover:opacity-100 theme-icon-button transition-smooth p-0.5 rounded" onclick="closeTab(event, '1')">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
@@ -14,20 +14,20 @@
 
     <!-- Actions -->
     <div class="flex items-center gap-2 ml-auto pr-3">
-        <button onclick="createNewTab()" class="btn-glass flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-lg" title="New Tab">
+        <button onclick="createNewTab()" class="btn-glass flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium theme-muted-text rounded-lg" title="New Tab">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
             </svg>
             <span>New</span>
         </button>
-        <div class="w-px h-5 bg-white/10"></div>
-        <button onclick="savePreset()" class="btn-glass flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-lg" title="Save Preset">
+        <div class="w-px h-5 theme-separator"></div>
+        <button onclick="savePreset()" class="btn-glass flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium theme-muted-text rounded-lg" title="Save Preset">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
             </svg>
             <span>Save</span>
         </button>
-        <button onclick="loadPreset()" class="btn-glass flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white rounded-lg" title="Load Preset">
+        <button onclick="loadPreset()" class="btn-glass flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium theme-muted-text rounded-lg" title="Load Preset">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
             </svg>
@@ -52,11 +52,11 @@
         });
 
         const newTab = document.createElement('div');
-        newTab.className = 'tab tab-active flex items-center gap-2 px-4 h-full border-r border-white/5 cursor-pointer group';
+        newTab.className = 'tab tab-active flex items-center gap-2 px-4 h-full border-r theme-border-soft cursor-pointer group';
         newTab.dataset.tabId = tabId;
         newTab.innerHTML = `
             <span class="text-sm font-medium">Dashboard ${tabCounter}</span>
-            <button class="ml-1 opacity-0 group-hover:opacity-100 hover:text-error transition-smooth p-0.5 rounded hover:bg-white/10" onclick="closeTab(event, '${tabId}')">
+            <button class="ml-1 opacity-0 group-hover:opacity-100 theme-icon-button transition-smooth p-0.5 rounded" onclick="closeTab(event, '${tabId}')">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>

@@ -1,9 +1,9 @@
 <!-- Modern Glassmorphic Sidebar -->
-<aside id="sidebar" class="sidebar-expanded glass border-r border-white/10 flex flex-col transition-collapse overflow-hidden shadow-refined">
+<aside id="sidebar" class="sidebar-expanded glass border-r theme-border flex flex-col transition-collapse overflow-hidden shadow-refined">
     <!-- Sidebar Header -->
-    <div class="flex items-center justify-between p-4 border-b border-white/10">
-        <span class="font-semibold text-base text-white sidebar-text">Widgets</span>
-        <button onclick="toggleSidebar()" class="text-slate-400 hover:text-white hover:bg-white/10 p-1.5 rounded-lg transition-smooth" title="Collapse">
+    <div class="flex items-center justify-between p-4 border-b theme-border">
+        <span class="font-semibold text-base theme-strong-text sidebar-text">Widgets</span>
+        <button onclick="toggleSidebar()" class="theme-icon-button p-1.5 rounded-lg transition-smooth" title="Collapse">
             <svg id="collapse-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
             </svg>
@@ -15,7 +15,7 @@
         <div class="space-y-3" id="widget-toolbox">
             <!-- Charts Category -->
             <div class="widget-category">
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 sidebar-text px-2">Charts</div>
+                <div class="text-xs font-bold theme-muted-text uppercase tracking-wider mb-3 sidebar-text px-2">Charts</div>
                 
                 <div class="widget-tool" data-widget-type="line-chart" draggable="true">
                     <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-move transition-smooth border border-transparent hover:border-primary/30 group">
@@ -25,8 +25,8 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium text-slate-200">Line Chart</div>
-                            <div class="text-xs text-slate-500">Time series data</div>
+                            <div class="text-sm font-medium theme-strong-text">Line Chart</div>
+                            <div class="text-xs theme-muted-text">Time series data</div>
                         </div>
                     </div>
                 </div>
@@ -39,8 +39,8 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium text-slate-200">Bar Chart</div>
-                            <div class="text-xs text-slate-500">Comparative data</div>
+                            <div class="text-sm font-medium theme-strong-text">Bar Chart</div>
+                            <div class="text-xs theme-muted-text">Comparative data</div>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
 
             <!-- Metrics Category -->
             <div class="widget-category mt-5">
-                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 sidebar-text px-2">Metrics</div>
+                <div class="text-xs font-bold theme-muted-text uppercase tracking-wider mb-3 sidebar-text px-2">Metrics</div>
                 
                 <div class="widget-tool" data-widget-type="kpi-card" draggable="true">
                     <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-move transition-smooth border border-transparent hover:border-primary/30 group">
@@ -58,8 +58,8 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium text-slate-200">KPI Card</div>
-                            <div class="text-xs text-slate-500">Key metric display</div>
+                            <div class="text-sm font-medium theme-strong-text">KPI Card</div>
+                            <div class="text-xs theme-muted-text">Key metric display</div>
                         </div>
                     </div>
                 </div>
@@ -72,8 +72,8 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium text-slate-200">Live Metric</div>
-                            <div class="text-xs text-slate-500">Real-time value</div>
+                            <div class="text-sm font-medium theme-strong-text">Live Metric</div>
+                            <div class="text-xs theme-muted-text">Real-time value</div>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,8 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium text-slate-200">Status</div>
-                            <div class="text-xs text-slate-500">System status</div>
+                            <div class="text-sm font-medium theme-strong-text">Status</div>
+                            <div class="text-xs theme-muted-text">System status</div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
 
     <!-- Collapsed Icon Bar -->
     <div class="sidebar-icons hidden flex-col gap-3 p-3">
-        <button onclick="toggleSidebar()" class="p-2.5 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition-smooth" title="Expand">
+        <button onclick="toggleSidebar()" class="p-2.5 theme-icon-button rounded-lg transition-smooth" title="Expand">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
