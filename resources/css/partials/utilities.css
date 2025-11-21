@@ -1,0 +1,111 @@
+/* ============================================
+   UTILITIES & HELPERS
+   ============================================ */
+
+/* Glassmorphism */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 0 0 var(--glass-highlight);
+}
+
+.glass-light {
+    background: var(--glass-light-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-light-border);
+    box-shadow: inset 0 1px 0 0 var(--glass-highlight);
+}
+
+.glass-strong {
+    background: var(--glass-strong-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-strong-border);
+    box-shadow: inset 0 1px 0 0 var(--glass-highlight);
+}
+
+/* Theme Helpers */
+.theme-strong-text {
+    color: var(--text-strong);
+}
+
+.theme-muted-text {
+    color: var(--text-subtle);
+}
+
+.theme-icon-button {
+    color: var(--icon-color);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-icon-button:hover {
+    color: var(--text-strong);
+    background: var(--hover-faint);
+}
+
+.theme-separator {
+    background: var(--divider);
+}
+
+.theme-border {
+    border-color: var(--divider);
+}
+
+.theme-border-soft {
+    border-color: var(--soft-divider);
+}
+
+/* Shadows & Glows */
+.glow-primary {
+    box-shadow:
+        0 0 20px rgba(14, 165, 233, 0.3),
+        0 0 40px rgba(14, 165, 233, 0.1);
+}
+
+.glow-accent {
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.3),
+        0 0 40px rgba(139, 92, 246, 0.1);
+}
+
+.shadow-refined {
+    box-shadow: var(--shadow-refined);
+}
+
+.shadow-refined-lg {
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.4),
+        0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-snappy {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-collapse {
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

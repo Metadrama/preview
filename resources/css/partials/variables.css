@@ -1,0 +1,95 @@
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* ============================================
+   THEME VARIABLES
+   ============================================ */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --bg-base: #0f172a;
+    --grid-dot: rgba(148, 163, 184, 0.08);
+
+    --text-strong: #f1f5f9;
+    --text-muted: #cbd5e1;
+    --text-subtle: #94a3b8;
+    --icon-color: #94a3b8;
+
+    --glass-bg: linear-gradient(145deg, rgba(40, 55, 80, 0.7) 0%, rgba(30, 41, 59, 0.7) 100%);
+    --glass-light-bg: linear-gradient(145deg, rgba(60, 75, 95, 0.5) 0%, rgba(51, 65, 85, 0.5) 100%);
+    --glass-strong-bg: linear-gradient(145deg, rgba(40, 50, 70, 0.85) 0%, rgba(30, 41, 59, 0.85) 100%);
+    --glass-border: rgba(148, 163, 184, 0.1);
+    --glass-light-border: rgba(148, 163, 184, 0.15);
+    --glass-strong-border: rgba(148, 163, 184, 0.2);
+
+    --widget-bg: linear-gradient(145deg, rgba(40, 50, 70, 0.4) 0%, rgba(30, 41, 59, 0.4) 100%);
+    --widget-border: rgba(255, 255, 255, 0.05);
+    --widget-hover-border: rgba(14, 165, 233, 0.3);
+    --widget-hover-ring: rgba(14, 165, 233, 0.1);
+    --widget-header-bg: rgba(51, 65, 85, 0.3);
+    --widget-header-border: rgba(148, 163, 184, 0.1);
+
+    --tab-active-bg: rgba(30, 41, 59, 0.8);
+    --tab-active-text: #f1f5f9;
+    --tab-inactive-bg: rgba(15, 23, 42, 0.6);
+    --tab-inactive-text: #94a3b8;
+    --tab-hover-bg: rgba(30, 41, 59, 0.6);
+    --tab-hover-border: rgba(14, 165, 233, 0.3);
+    --tab-hover-text: #e2e8f0;
+
+    --scrollbar-track: rgba(15, 23, 42, 0.5);
+    --scrollbar-thumb: rgba(148, 163, 184, 0.3);
+    --scrollbar-thumb-hover: rgba(148, 163, 184, 0.5);
+
+    --divider: rgba(255, 255, 255, 0.1);
+    --soft-divider: rgba(255, 255, 255, 0.05);
+    --hover-faint: rgba(255, 255, 255, 0.08);
+
+    --glass-highlight: rgba(255, 255, 255, 0.05);
+    --shadow-refined: inset 0 1px 0 0 var(--glass-highlight), 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="industrial-light"] {
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --bg-base: #f8fafc;
+    --grid-dot: rgba(148, 163, 184, 0.15);
+
+    --text-strong: #0f172a;
+    --text-muted: #1f2937;
+    --text-subtle: #475569;
+    --icon-color: #475569;
+
+    --glass-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.85) 100%);
+    --glass-light-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.92) 100%);
+    --glass-strong-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(226, 232, 240, 0.92) 100%);
+    --glass-border: rgba(148, 163, 184, 0.25);
+    --glass-light-border: rgba(148, 163, 184, 0.2);
+    --glass-strong-border: rgba(100, 116, 139, 0.25);
+
+    --widget-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.92) 100%);
+    --widget-border: rgba(148, 163, 184, 0.25);
+    --widget-hover-border: rgba(14, 165, 233, 0.4);
+    --widget-hover-ring: rgba(14, 165, 233, 0.12);
+    --widget-header-bg: rgba(226, 232, 240, 0.9);
+    --widget-header-border: rgba(148, 163, 184, 0.25);
+
+    --tab-active-bg: rgba(255, 255, 255, 0.95);
+    --tab-active-text: #0f172a;
+    --tab-inactive-bg: rgba(226, 232, 240, 0.9);
+    --tab-inactive-text: #475569;
+    --tab-hover-bg: rgba(255, 255, 255, 0.9);
+    --tab-hover-border: rgba(14, 165, 233, 0.35);
+    --tab-hover-text: #0f172a;
+
+    --scrollbar-track: rgba(237, 242, 247, 0.9);
+    --scrollbar-thumb: rgba(148, 163, 184, 0.4);
+    --scrollbar-thumb-hover: rgba(100, 116, 139, 0.7);
+
+    --divider: rgba(148, 163, 184, 0.3);
+    --soft-divider: rgba(148, 163, 184, 0.18);
+    --hover-faint: rgba(148, 163, 184, 0.12);
+
+    --glass-highlight: rgba(255, 255, 255, 0.5);
+    --shadow-refined: inset 0 1px 0 0 var(--glass-highlight), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
