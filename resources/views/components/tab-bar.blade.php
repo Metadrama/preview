@@ -1,8 +1,8 @@
 <!-- Modern Glassmorphic Tab Bar -->
-<div class="glass fixed bottom-6 left-1/2 -translate-x-1/2 z-50 h-14 max-w-[90vw] flex items-center gap-4 px-4 rounded-2xl shadow-refined-lg border theme-border overflow-x-auto">
-    <div class="flex items-center h-full" id="tab-container">
+<div class="glass fixed bottom-6 left-1/2 -translate-x-1/2 z-50 h-14 max-w-[90vw] flex items-center gap-4 px-4 rounded-xl shadow-refined-lg border theme-border overflow-x-auto">
+    <div class="flex items-center h-full gap-2" id="tab-container">
         <!-- Tabs will be rendered here -->
-        <div class="tab tab-active flex items-center gap-2 px-4 h-full border-r theme-border-soft cursor-pointer group" data-tab-id="1">
+        <div class="tab tab-active flex items-center gap-2 px-4 h-10 cursor-pointer group select-none" data-tab-id="1">
             <span class="text-sm font-medium">Dashboard 1</span>
             <button class="ml-1 opacity-0 group-hover:opacity-100 theme-icon-button transition-smooth p-0.5 rounded" onclick="closeTab(event, '1')">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@
         });
 
         const newTab = document.createElement('div');
-        newTab.className = 'tab tab-active flex items-center gap-2 px-4 h-full border-r theme-border-soft cursor-pointer group';
+        newTab.className = 'tab tab-active flex items-center gap-2 px-4 h-10 cursor-pointer group select-none';
         newTab.dataset.tabId = tabId;
         newTab.innerHTML = `
             <span class="text-sm font-medium">Dashboard ${tabCounter}</span>
