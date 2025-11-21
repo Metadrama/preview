@@ -1,5 +1,5 @@
 <!-- Modern Glassmorphic Tab Bar -->
-<div class="glass fixed bottom-6 left-1/2 -translate-x-1/2 z-50 h-14 max-w-[90vw] flex items-center gap-4 px-4 rounded-xl shadow-refined-lg border theme-border overflow-x-auto">
+<div class="glass fixed bottom-6 left-1/2 -translate-x-1/2 z-50 h-12 max-w-[70vw] flex items-center gap-2 px-1 rounded-xl shadow-refined-lg border theme-border overflow-x-auto">
     <div class="flex items-center h-full gap-2" id="tab-container">
         <!-- Tabs will be rendered here -->
         <div class="tab tab-active flex items-center gap-2 px-4 h-10 cursor-pointer group select-none" data-tab-id="1">
