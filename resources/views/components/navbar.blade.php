@@ -80,55 +80,81 @@
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity opacity-0" id="settings-backdrop" onclick="toggleSettings()"></div>
 
     <!-- Modal Content -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md transform transition-all scale-95 opacity-0" id="settings-content">
-        <div class="glass-strong rounded-2xl border border-(--glass-border) shadow-2xl overflow-hidden">
-            <!-- Header -->
-            <div class="flex items-center justify-between px-6 py-4 border-b border-(--divider)">
-                <h2 class="text-lg font-semibold theme-strong-text">Settings</h2>
-                <button onclick="toggleSettings()" class="theme-icon-button p-2 rounded-lg hover:bg-(--hover-faint)">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl transform transition-all scale-95 opacity-0" id="settings-content">
+        <div class="glass-strong rounded-2xl border border-(--glass-border) shadow-2xl overflow-hidden flex h-[500px]">
+            <!-- Sidebar -->
+            <div class="w-48 border-r border-(--divider) bg-(--glass-light-bg) p-4 flex flex-col gap-2">
+                <h2 class="text-sm font-semibold theme-muted-text px-3 py-2 uppercase tracking-wider mb-2">Settings</h2>
+                <button class="flex items-center gap-3 px-3 py-2 rounded-lg bg-(--glass-highlight) text-(--text-strong) font-medium text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+                    Appearance
+                </button>
+                <button class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-(--hover-faint) text-(--text-muted) hover:text-(--text-strong) transition-colors text-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /></svg>
+                    General
                 </button>
             </div>
 
-            <!-- Body -->
-            <div class="p-6 space-y-6">
-                <!-- Theme Section -->
-                <div>
-                    <h3 class="text-sm font-medium theme-muted-text mb-3 uppercase tracking-wider">Appearance</h3>
-                    <div class="grid grid-cols-2 gap-3">
-                        <button onclick="setTheme('default')" class="theme-option group relative p-3 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-(--bg-base) transition-all text-left" data-theme-value="default">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="w-4 h-4 rounded-full bg-slate-900 border border-slate-700"></div>
-                                <span class="text-sm font-medium theme-strong-text">Default</span>
-                            </div>
-                            <p class="text-xs theme-muted-text">Deep blue & glass</p>
-                        </button>
+            <!-- Content -->
+            <div class="flex-1 flex flex-col">
+                <!-- Header -->
+                <div class="flex items-center justify-between px-8 py-6 border-b border-(--divider)">
+                    <h1 class="text-2xl font-bold theme-strong-text">Appearance</h1>
+                    <button onclick="toggleSettings()" class="theme-icon-button p-2 rounded-lg hover:bg-(--hover-faint)">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
 
-                        <button onclick="setTheme('industrial-light')" class="theme-option group relative p-3 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-[#f8fafc] transition-all text-left" data-theme-value="industrial-light">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="w-4 h-4 rounded-full bg-slate-100 border border-slate-300"></div>
-                                <span class="text-sm font-medium text-slate-900">Industrial</span>
-                            </div>
-                            <p class="text-xs text-slate-500">Clean & technical</p>
-                        </button>
+                <!-- Scrollable Body -->
+                <div class="p-8 space-y-8 overflow-y-auto">
+                    <!-- Mode Section -->
+                    <div>
+                        <h3 class="text-sm font-medium theme-muted-text mb-4">Color Mode</h3>
+                        <div class="flex p-1 rounded-xl bg-(--glass-light-bg) border border-(--glass-border) w-fit">
+                            <button onclick="setMode('light')" class="mode-option px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2" data-mode-value="light">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                                Light
+                            </button>
+                            <button onclick="setMode('dark')" class="mode-option px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center gap-2" data-mode-value="dark">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                                Dark
+                            </button>
+                        </div>
+                    </div>
 
-                        <button onclick="setTheme('monochrome-light')" class="theme-option group relative p-3 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-white transition-all text-left" data-theme-value="monochrome-light">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="w-4 h-4 rounded-full bg-white border border-gray-300"></div>
-                                <span class="text-sm font-medium text-black">Mono Light</span>
-                            </div>
-                            <p class="text-xs text-gray-500">Minimalist white</p>
-                        </button>
+                    <!-- Theme Section -->
+                    <div>
+                        <h3 class="text-sm font-medium theme-muted-text mb-4">Interface Theme</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Default -->
+                            <button onclick="setTheme('default')" class="theme-option group relative p-4 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-(--bg-base) transition-all text-left" data-theme-value="default">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-base font-medium theme-strong-text">Default</span>
+                                    <div class="w-4 h-4 rounded-full bg-blue-500"></div>
+                                </div>
+                                <p class="text-sm theme-muted-text">The classic deep blue glass aesthetic.</p>
+                            </button>
 
-                        <button onclick="setTheme('monochrome-dark')" class="theme-option group relative p-3 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-black transition-all text-left" data-theme-value="monochrome-dark">
-                            <div class="flex items-center gap-2 mb-2">
-                                <div class="w-4 h-4 rounded-full bg-black border border-gray-700"></div>
-                                <span class="text-sm font-medium text-white">Mono Dark</span>
-                            </div>
-                            <p class="text-xs text-gray-500">Minimalist black</p>
-                        </button>
+                            <!-- Industrial -->
+                            <button onclick="setTheme('industrial')" class="theme-option group relative p-4 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-slate-100 dark:bg-slate-900 transition-all text-left" data-theme-value="industrial">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-base font-medium text-slate-900 dark:text-slate-100">Industrial</span>
+                                    <div class="w-4 h-4 rounded-full bg-slate-500"></div>
+                                </div>
+                                <p class="text-sm text-slate-500">Clean, technical, and precise.</p>
+                            </button>
+
+                            <!-- Monochrome -->
+                            <button onclick="setTheme('monochrome')" class="theme-option group relative p-4 rounded-xl border border-(--glass-border) hover:border-(--widget-hover-border) bg-white dark:bg-black transition-all text-left" data-theme-value="monochrome">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-base font-medium text-black dark:text-white">Monochrome</span>
+                                    <div class="w-4 h-4 rounded-full bg-black dark:bg-white border border-gray-200 dark:border-gray-800"></div>
+                                </div>
+                                <p class="text-sm text-gray-500">High contrast minimalist design.</p>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -185,20 +211,40 @@
             root.setAttribute('data-theme', themeName);
         }
 
-        // Save to local storage
         localStorage.setItem('app-theme', themeName);
-
-        // Update UI active state
-        updateThemeUI(themeName);
+        updateThemeUI();
     }
 
-    function updateThemeUI(activeTheme) {
+    function setMode(modeName) {
+        const root = document.documentElement;
+        root.setAttribute('data-mode', modeName);
+        localStorage.setItem('app-mode', modeName);
+        updateThemeUI();
+    }
+
+    function updateThemeUI() {
+        const currentTheme = localStorage.getItem('app-theme') || 'default';
+        const currentMode = localStorage.getItem('app-mode') || 'dark'; // Default to dark
+
+        // Update Theme Selection UI
         document.querySelectorAll('.theme-option').forEach(btn => {
             const themeValue = btn.dataset.themeValue;
-            if (themeValue === activeTheme) {
+            if (themeValue === currentTheme) {
                 btn.classList.add('ring-2', 'ring-(--widget-hover-border)', 'bg-(--hover-faint)');
             } else {
                 btn.classList.remove('ring-2', 'ring-(--widget-hover-border)', 'bg-(--hover-faint)');
+            }
+        });
+
+        // Update Mode Selection UI
+        document.querySelectorAll('.mode-option').forEach(btn => {
+            const modeValue = btn.dataset.modeValue;
+            if (modeValue === currentMode) {
+                btn.classList.add('bg-white', 'text-black', 'shadow-sm');
+                btn.classList.remove('text-(--text-muted)', 'hover:text-(--text-strong)');
+            } else {
+                btn.classList.remove('bg-white', 'text-black', 'shadow-sm');
+                btn.classList.add('text-(--text-muted)', 'hover:text-(--text-strong)');
             }
         });
     }
@@ -206,6 +252,9 @@
     // Initialize Theme
     document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('app-theme') || 'default';
+        const savedMode = localStorage.getItem('app-mode') || 'dark';
+        
         setTheme(savedTheme);
+        setMode(savedMode);
     });
 </script>
