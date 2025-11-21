@@ -131,12 +131,18 @@
 
 .grid-stack-item {
     transition: none;
-    padding: 4px !important;
-    /* Creates consistent 8px gaps (4px + 4px) */
+    padding: 0 !important;
 }
 
 .grid-stack-item-content {
     overflow: hidden;
+    /* the padding between card */
+    inset: 4px !important;
+    position: absolute !important;
+    top: 4px !important;
+    left: 4px !important;
+    right: 4px !important;
+    bottom: 4px !important;
 }
 
 .grid-stack-placeholder {
