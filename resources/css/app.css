@@ -194,6 +194,8 @@ body {
     /* Margin handled by JS config */
     padding: 4px !important;
     /* Add padding to container to match item padding for consistent edge gaps */
+    min-width: 1600px;
+    /* Prevent widgets from resizing/squishing; force scrollbars on small screens */
 }
 
 .grid-stack-item {
