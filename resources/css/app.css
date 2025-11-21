@@ -196,7 +196,6 @@ body {
 }
 
 .theme-icon-button:hover {
-    color: var(--text-strong);
     background: var(--hover-faint);
 }
 
