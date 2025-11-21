@@ -23,20 +23,20 @@
         <!-- Right: Actions -->
         <div class="flex items-center gap-3">
             <!-- Zoom Controls -->
-            <div class="flex items-center glass-light rounded-lg overflow-hidden">
-                <button onclick="adjustZoom(-0.1)" class="theme-icon-button transition-snappy px-3 py-2" title="Zoom Out">
+            <div class="flex items-stretch h-8 rounded-lg overflow-hidden border border-[var(--glass-light-border)] shadow-[inset_0_1px_0_0_var(--glass-highlight)] backdrop-blur-[8px]">
+                <button onclick="adjustZoom(-0.1)" class="theme-icon-button transition-smooth px-3 flex items-center justify-center bg-[var(--glass-light-bg)] hover:bg-[var(--hover-faint)]" title="Zoom Out">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
                     </svg>
                 </button>
-                <span class="text-sm theme-muted-text w-12 text-center font-medium" id="zoom-level">100%</span>
-                <button onclick="adjustZoom(0.1)" class="theme-icon-button transition-snappy px-3 py-2" title="Zoom In">
+                <span class="text-sm theme-muted-text w-12 flex items-center justify-center font-medium bg-[var(--glass-light-bg)]" id="zoom-level">100%</span>
+                <button onclick="adjustZoom(0.1)" class="theme-icon-button transition-smooth px-3 flex items-center justify-center bg-[var(--glass-light-bg)] hover:bg-[var(--hover-faint)]" title="Zoom In">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                     </svg>
                 </button>
-                <div class="w-px h-5 theme-separator"></div>
-                <button onclick="resetZoom()" class="theme-icon-button transition-snappy px-3 py-2" title="Reset Zoom">
+                <div class="w-px h-5 theme-separator self-center"></div>
+                <button onclick="resetZoom()" class="theme-icon-button transition-smooth px-3 flex items-center justify-center bg-[var(--glass-light-bg)] hover:bg-[var(--hover-faint)]" title="Reset Zoom">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
