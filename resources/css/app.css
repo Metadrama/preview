@@ -10,161 +10,223 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-/* Monochromatic Industrial Theme */
+/* ============================================
+   MODERN GLASSMORPHIC THEME
+   ============================================ */
+
+/* Base Styles */
 body {
-    background-color: #0a0a0a;
-    color: #e5e5e5;
-    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f1f5f9;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar - Monochrome */
+/* Custom Scrollbar - Modern & Refined */
 * {
     scrollbar-width: thin;
-    scrollbar-color: #404040 #1a1a1a;
+    scrollbar-color: rgba(148, 163, 184, 0.3) rgba(15, 23, 42, 0.5);
 }
 
 *::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
 }
 
 *::-webkit-scrollbar-track {
-    background: #1a1a1a;
-    border-radius: 2px;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 3px;
 }
 
 *::-webkit-scrollbar-thumb {
-    background: #404040;
-    border-radius: 2px;
+    background: rgba(148, 163, 184, 0.3);
+    border-radius: 3px;
+    transition: background 0.2s ease;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background: #525252;
+    background: rgba(148, 163, 184, 0.5);
 }
 
-/* Canvas Grid Pattern - Monochrome */
+/* Canvas Grid Pattern - Refined */
 .canvas-grid {
-    background-color: #0d0d0d;
+    background-color: #0f172a;
     background-image:
-        radial-gradient(circle, #262626 0.5px, transparent 0.5px);
-    background-size: 12px 12px;
+        radial-gradient(circle, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 20px 20px;
     background-position: 0 0;
 }
 
-/* Snappy Animations */
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
+
+.glass {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.glass-light {
+    background: rgba(51, 65, 85, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.glass-strong {
+    background: rgba(30, 41, 59, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* ============================================
+   ANIMATIONS & TRANSITIONS
+   ============================================ */
+
+.transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .transition-snappy {
-    transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .transition-collapse {
-    transition: width 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Widget Card Styles - Monochrome with Slim Gaps */
+/* ============================================
+   WIDGET CARD STYLES
+   ============================================ */
+
 .widget-card {
-    background-color: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(8px);
-    border: 1px solid #2a2a2a;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 12px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.3),
+        0 2px 4px -1px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .widget-card:hover {
-    border-color: #404040;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border-color: rgba(14, 165, 233, 0.3);
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.4),
+        0 4px 6px -2px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(14, 165, 233, 0.1),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
 }
 
 .widget-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0.75rem;
-    border-bottom: 1px solid #222;
-    background-color: rgba(20, 20, 20, 0.7);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    background: rgba(51, 65, 85, 0.3);
+    border-radius: 12px 12px 0 0;
 }
 
-/* Sidebar Styles - Monochrome */
+/* ============================================
+   SIDEBAR STYLES
+   ============================================ */
+
 .sidebar-collapsed {
-    width: 44px;
+    width: 48px;
 }
 
 .sidebar-expanded {
-    width: 220px;
+    width: 240px;
 }
 
-/* Tab Bar Styles - Monochrome */
+/* ============================================
+   TAB BAR STYLES
+   ============================================ */
+
 .tab-active {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    border-bottom: 1px solid #404040;
+    background: rgba(30, 41, 59, 0.8);
+    color: #f1f5f9;
+    border-bottom: 2px solid #0ea5e9;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
 }
 
 .tab-inactive {
-    background-color: #0d0d0d;
-    color: #808080;
-    transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(15, 23, 42, 0.6);
+    color: #94a3b8;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-inactive:hover {
-    color: #cccccc;
-    background-color: rgba(26, 26, 26, 0.5);
+    color: #e2e8f0;
+    background: rgba(30, 41, 59, 0.6);
+    border-bottom: 2px solid rgba(14, 165, 233, 0.3);
 }
 
-/* Grid Stack Overrides - Reduced Gaps */
+/* ============================================
+   GRID STACK OVERRIDES
+   ============================================ */
+
 .grid-stack {
-    margin: -2px;
+    margin: -4px;
 }
 
 .grid-stack-item {
     transition: none;
-    padding: 2px;
+    padding: 4px;
 }
 
 .grid-stack-item-content {
     overflow: hidden;
 }
 
-/* Glow Effects - Monochrome */
+.grid-stack-placeholder {
+    background: rgba(14, 165, 233, 0.15) !important;
+    border: 2px dashed rgba(14, 165, 233, 0.5) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.2) !important;
+}
+
+/* ============================================
+   GLOW & SHADOW EFFECTS
+   ============================================ */
+
 .glow-primary {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 0 20px rgba(14, 165, 233, 0.3),
+        0 0 40px rgba(14, 165, 233, 0.1);
 }
 
 .glow-accent {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.3),
+        0 0 40px rgba(139, 92, 246, 0.1);
 }
 
-/* Compact Utilities */
-.compact-y {
-    padding-top: 0.375rem;
-    padding-bottom: 0.375rem;
+.shadow-refined {
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.3),
+        0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
-.compact-x {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+.shadow-refined-lg {
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.4),
+        0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }
 
-/* Loading Animation */
-@keyframes pulse-glow {
+/* ============================================
+   DRAG HANDLE
+   ============================================ */
 
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-}
-
-.animate-pulse-glow {
-    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Drag Handle Cursor */
 .drag-handle {
     cursor: move;
     cursor: grab;
@@ -172,4 +234,43 @@ body {
 
 .drag-handle:active {
     cursor: grabbing;
+}
+
+/* ============================================
+   LOADING ANIMATIONS
+   ============================================ */
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
+.btn-glass {
+    background: rgba(51, 65, 85, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-glass:hover {
+    background: rgba(51, 65, 85, 0.7);
+    border-color: rgba(148, 163, 184, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1px);
+}
+
+.btn-glass:active {
+    transform: translateY(0);
 }
