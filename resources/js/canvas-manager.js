@@ -224,12 +224,38 @@ function setupScrollToZoom() {
     }, { passive: false });
 }
 
+// Sidebar Interaction
+function setupSidebarInteraction() {
+    // Initial margin setup (sidebar starts expanded)
+    updateGridMargin(true);
+
+    window.addEventListener('sidebar-toggle', (e) => {
+        updateGridMargin(e.detail.expanded);
+    });
+}
+
+function updateGridMargin(expanded) {
+    const marginContainer = document.getElementById('grid-margin-container');
+    if (marginContainer) {
+        // Sidebar is fixed at left-6 (24px)
+        // Expanded width: 240px -> Total occupied: 264px
+        // Collapsed width: 48px -> Total occupied: 72px
+        // Add 24px gap
+        
+        const marginLeft = expanded ? '288px' : '96px';
+        marginContainer.style.marginLeft = marginLeft;
+    }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     initializeCanvas();
 
     // Initialize scroll-to-zoom
     setupScrollToZoom();
+
+    // Setup sidebar interaction
+    setupSidebarInteraction();
 
     // Add sample widgets for demo
     setTimeout(() => {

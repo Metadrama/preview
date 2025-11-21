@@ -126,5 +126,10 @@
             sidebar.querySelectorAll('.sidebar-icons').forEach(el => el.classList.remove('hidden'));
             collapseIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />';
         }
+
+        // Dispatch event for canvas to adjust
+        window.dispatchEvent(new CustomEvent('sidebar-toggle', { 
+            detail: { expanded: sidebarExpanded } 
+        }));
     }
 </script>

@@ -15,9 +15,12 @@
             </div>
         </div>
 
-        <!-- GridStack Container - This is what gets scaled -->
-        <div class="grid-stack min-h-full" id="grid-canvas" style="width: 100%; min-height: 100%;">
-            <!-- Widgets will be added here dynamically -->
+        <!-- GridStack Container Wrapper for Sidebar Offset -->
+        <div id="grid-margin-container" class="min-h-full transition-all duration-300 ease-out">
+            <!-- GridStack Container - This is what gets scaled -->
+            <div class="grid-stack min-h-full" id="grid-canvas" style="width: 100%; min-height: 100%;">
+                <!-- Widgets will be added here dynamically -->
+            </div>
         </div>
     </div>
 </main>
