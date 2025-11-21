@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Berapit Mobility - Monitoring Platform</title>
+    <title>wip - preview</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
