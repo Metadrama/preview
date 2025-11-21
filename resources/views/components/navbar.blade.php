@@ -23,20 +23,20 @@
         <!-- Right: Actions -->
         <div class="flex items-center gap-3">
             <!-- Zoom Controls -->
-            <div class="flex items-center gap-1 glass-light rounded-lg px-3 py-1.5">
-                <button onclick="adjustZoom(-0.1)" class="theme-icon-button transition-snappy p-1 rounded" title="Zoom Out">
+            <div class="flex items-center glass-light rounded-lg overflow-hidden">
+                <button onclick="adjustZoom(-0.1)" class="theme-icon-button transition-snappy px-3 py-2" title="Zoom Out">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
                     </svg>
                 </button>
-                <span class="text-sm theme-muted-text w-14 text-center font-medium" id="zoom-level">100%</span>
-                <button onclick="adjustZoom(0.1)" class="theme-icon-button transition-snappy p-1 rounded" title="Zoom In">
+                <span class="text-sm theme-muted-text w-12 text-center font-medium" id="zoom-level">100%</span>
+                <button onclick="adjustZoom(0.1)" class="theme-icon-button transition-snappy px-3 py-2" title="Zoom In">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                     </svg>
                 </button>
-                <div class="w-px h-4 theme-separator mx-1"></div>
-                <button onclick="resetZoom()" class="theme-icon-button transition-snappy p-1 rounded" title="Reset Zoom">
+                <div class="w-px h-5 theme-separator"></div>
+                <button onclick="resetZoom()" class="theme-icon-button transition-snappy px-3 py-2" title="Reset Zoom">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
