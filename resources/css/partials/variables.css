@@ -93,3 +93,91 @@
     --glass-highlight: rgba(255, 255, 255, 0.5);
     --shadow-refined: inset 0 1px 0 0 var(--glass-highlight), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
+
+:root[data-theme="monochrome-light"] {
+    --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+    --bg-base: #ffffff;
+    --grid-dot: rgba(0, 0, 0, 0.1);
+
+    --text-strong: #000000;
+    --text-muted: #4b5563;
+    --text-subtle: #9ca3af;
+    --icon-color: #6b7280;
+
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-light-bg: rgba(255, 255, 255, 0.8);
+    --glass-strong-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-light-border: rgba(0, 0, 0, 0.05);
+    --glass-strong-border: rgba(0, 0, 0, 0.15);
+
+    --widget-bg: #ffffff;
+    --widget-border: rgba(0, 0, 0, 0.1);
+    --widget-hover-border: rgba(0, 0, 0, 0.2);
+    --widget-hover-ring: rgba(0, 0, 0, 0.05);
+    --widget-header-bg: #f9fafb;
+    --widget-header-border: rgba(0, 0, 0, 0.05);
+
+    --tab-active-bg: #000000;
+    --tab-active-text: #ffffff;
+    --tab-inactive-bg: transparent;
+    --tab-inactive-text: #6b7280;
+    --tab-hover-bg: #f3f4f6;
+    --tab-hover-border: rgba(0, 0, 0, 0.1);
+    --tab-hover-text: #000000;
+
+    --scrollbar-track: #f3f4f6;
+    --scrollbar-thumb: #d1d5db;
+    --scrollbar-thumb-hover: #9ca3af;
+
+    --divider: rgba(0, 0, 0, 0.1);
+    --soft-divider: rgba(0, 0, 0, 0.05);
+    --hover-faint: rgba(0, 0, 0, 0.03);
+
+    --glass-highlight: rgba(255, 255, 255, 1);
+    --shadow-refined: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="monochrome-dark"] {
+    --bg-gradient: linear-gradient(135deg, #000000 0%, #111111 100%);
+    --bg-base: #000000;
+    --grid-dot: rgba(255, 255, 255, 0.15);
+
+    --text-strong: #ffffff;
+    --text-muted: #d1d5db;
+    --text-subtle: #6b7280;
+    --icon-color: #9ca3af;
+
+    --glass-bg: rgba(20, 20, 20, 0.9);
+    --glass-light-bg: rgba(30, 30, 30, 0.8);
+    --glass-strong-bg: rgba(10, 10, 10, 0.95);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-light-border: rgba(255, 255, 255, 0.1);
+    --glass-strong-border: rgba(255, 255, 255, 0.2);
+
+    --widget-bg: #0a0a0a;
+    --widget-border: rgba(255, 255, 255, 0.15);
+    --widget-hover-border: rgba(255, 255, 255, 0.3);
+    --widget-hover-ring: rgba(255, 255, 255, 0.1);
+    --widget-header-bg: #171717;
+    --widget-header-border: rgba(255, 255, 255, 0.1);
+
+    --tab-active-bg: #ffffff;
+    --tab-active-text: #000000;
+    --tab-inactive-bg: transparent;
+    --tab-inactive-text: #9ca3af;
+    --tab-hover-bg: #1f2937;
+    --tab-hover-border: rgba(255, 255, 255, 0.2);
+    --tab-hover-text: #ffffff;
+
+    --scrollbar-track: #171717;
+    --scrollbar-thumb: #374151;
+    --scrollbar-thumb-hover: #4b5563;
+
+    --divider: rgba(255, 255, 255, 0.15);
+    --soft-divider: rgba(255, 255, 255, 0.08);
+    --hover-faint: rgba(255, 255, 255, 0.05);
+
+    --glass-highlight: rgba(255, 255, 255, 0.05);
+    --shadow-refined: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
