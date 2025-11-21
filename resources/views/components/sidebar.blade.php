@@ -1,5 +1,5 @@
 <!-- Modern Glassmorphic Sidebar -->
-<aside id="sidebar" class="sidebar-expanded glass border-r theme-border flex flex-col transition-collapse overflow-hidden shadow-refined">
+<aside id="sidebar" class="sidebar-expanded glass border theme-border flex flex-col transition-collapse overflow-hidden shadow-refined-lg fixed left-6 top-20 bottom-24 rounded-2xl z-40">
     <!-- Sidebar Header -->
     <div class="flex items-center justify-between p-4 border-b theme-border">
         <span class="font-semibold text-base theme-strong-text sidebar-text">Widgets</span>
