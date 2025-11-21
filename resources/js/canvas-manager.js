@@ -173,12 +173,28 @@ function setupZoomControls() {
 }
 
 function applyZoom() {
-    const canvas = document.getElementById('canvas-wrapper');
+    const gridCanvas = document.getElementById('grid-canvas');
+    const canvasWrapper = document.getElementById('canvas-wrapper');
     const zoomDisplay = document.getElementById('zoom-level');
 
-    if (canvas) {
-        canvas.style.transform = `scale(${currentZoom})`;
-        canvas.style.transformOrigin = 'top left';
+    if (gridCanvas) {
+        // Only scale the grid content, not the wrapper
+        gridCanvas.style.transform = `scale(${currentZoom})`;
+        gridCanvas.style.transformOrigin = 'top left';
+
+        // Adjust grid width/height to compensate for scaling
+        // This ensures the grid expands to fill the viewport when zoomed out
+        const scaledWidth = 100 / currentZoom;
+        const scaledHeight = 100 / currentZoom;
+        gridCanvas.style.width = `${scaledWidth}%`;
+        gridCanvas.style.minHeight = `${scaledHeight}%`;
+    }
+
+    if (canvasWrapper) {
+        // Update grid background size to scale with zoom
+        // Base grid size is 20px, scale it inversely with zoom
+        const gridSize = 20 / currentZoom;
+        canvasWrapper.style.backgroundSize = `${gridSize}px ${gridSize}px`;
     }
 
     if (zoomDisplay) {
@@ -192,20 +208,20 @@ function setupScrollToZoom() {
     if (!canvasWrapper) return;
 
     canvasWrapper.addEventListener('wheel', (e) => {
-        // Prevent default scrolling
-        e.preventDefault();
+        // Check if Ctrl key is pressed for zoom
+        if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
 
-        // Determine zoom direction
-        const delta = -Math.sign(e.deltaY);
-        const zoomAmount = delta * 0.05; // 5% per scroll tick
+            // Determine zoom direction
+            const delta = -Math.sign(e.deltaY);
+            const zoomAmount = delta * 0.05; // 5% per scroll tick
 
-        // Apply zoom
-        currentZoom = Math.min(Math.max(currentZoom + zoomAmount, 0.5), 2.0);
-        applyZoom();
+            // Apply zoom
+            currentZoom = Math.min(Math.max(currentZoom + zoomAmount, 0.5), 2.0);
+            applyZoom();
+        }
+        // Otherwise allow normal scrolling
     }, { passive: false });
-
-    // Also disable normal scrolling completely on the wrapper
-    canvasWrapper.style.overflow = 'hidden';
 }
 
 // Initialize when DOM is ready
