@@ -13,16 +13,19 @@ export function initializeCanvas() {
     if (!gridElement) return;
 
     grid = GridStack.init({
-        cellHeight: 60,
+        cellHeight: 20,
         margin: 0, // Disable JS margin, handle via CSS padding for consistency
         minRow: 1,
-        column: 12,
+        column: 80,
         animate: true,
         float: false,
         disableOneColumnMode: true,
         acceptWidgets: true,
         removable: false,
     }, gridElement);
+
+    // Set fixed base width for pixel-perfect alignment
+    gridElement.style.width = '1600px';
 
     // Make grid globally accessible
     window.grid = grid;
@@ -176,24 +179,31 @@ function applyZoom() {
     const gridCanvas = document.getElementById('grid-canvas');
     const canvasWrapper = document.getElementById('canvas-wrapper');
     const zoomDisplay = document.getElementById('zoom-level');
+    const marginContainer = document.getElementById('grid-margin-container');
 
     if (gridCanvas) {
-        // Only scale the grid content, not the wrapper
+        // Scale the grid content
         gridCanvas.style.transform = `scale(${currentZoom})`;
         gridCanvas.style.transformOrigin = 'top left';
 
-        // Adjust grid width/height to compensate for scaling
-        // This ensures the grid expands to fill the viewport when zoomed out
-        const scaledWidth = 100 / currentZoom;
-        const scaledHeight = 100 / currentZoom;
-        gridCanvas.style.width = `${scaledWidth}%`;
-        gridCanvas.style.minHeight = `${scaledHeight}%`;
+        // Ensure fixed width is maintained
+        gridCanvas.style.width = '1600px';
+    }
+
+    if (marginContainer) {
+        // Adjust container size to allow scrolling when zoomed in
+        // We scale the base width (1600px) by the zoom factor
+        const scaledWidth = 1600 * currentZoom;
+        const scaledHeight = 1000 * currentZoom; // Approximate min height
+
+        marginContainer.style.width = `${scaledWidth}px`;
+        marginContainer.style.minHeight = `${scaledHeight}px`;
     }
 
     if (canvasWrapper) {
         // Update grid background size to scale with zoom
-        // Base grid size is 20px, scale it inversely with zoom
-        const gridSize = 20 / currentZoom;
+        // Base grid size is 20px, scale it directly with zoom
+        const gridSize = 20 * currentZoom;
         canvasWrapper.style.backgroundSize = `${gridSize}px ${gridSize}px`;
     }
 
@@ -241,7 +251,7 @@ function updateGridMargin(expanded) {
         // Expanded width: 240px -> Total occupied: 264px
         // Collapsed width: 48px -> Total occupied: 72px
         // Add 24px gap
-        
+
         const marginLeft = expanded ? '288px' : '96px';
         marginContainer.style.marginLeft = marginLeft;
     }
@@ -260,9 +270,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add sample widgets for demo
     setTimeout(() => {
         addWidget('kpi-card', { x: 0, y: 0 });
-        addWidget('line-chart', { x: 3, y: 0 });
-        addWidget('live-metric', { x: 9, y: 0 });
-        addWidget('bar-chart', { x: 0, y: 2 });
-        addWidget('status-indicator', { x: 6, y: 2 });
+        addWidget('line-chart', { x: 20, y: 0 });
+        addWidget('live-metric', { x: 60, y: 0 });
+        addWidget('bar-chart', { x: 0, y: 6 });
+        addWidget('status-indicator', { x: 40, y: 6 });
     }, 500);
 });

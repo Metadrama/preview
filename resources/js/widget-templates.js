@@ -2,8 +2,8 @@
 export const widgetTemplates = {
     'kpi-card': {
         title: 'KPI Card',
-        width: 3,
-        height: 2,
+        width: 20,
+        height: 6,
         render: (id) => `
             <div class="widget-card h-full group relative">
                 <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
@@ -30,8 +30,8 @@ export const widgetTemplates = {
 
     'line-chart': {
         title: 'Line Chart',
-        width: 6,
-        height: 4,
+        width: 40,
+        height: 12,
         render: (id) => `
             <div class="widget-card h-full group relative">
                 <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
@@ -60,8 +60,8 @@ export const widgetTemplates = {
 
     'bar-chart': {
         title: 'Bar Chart',
-        width: 6,
-        height: 4,
+        width: 40,
+        height: 12,
         render: (id) => `
             <div class="widget-card h-full group relative">
                 <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
@@ -100,8 +100,8 @@ export const widgetTemplates = {
 
     'live-metric': {
         title: 'Live Metric',
-        width: 3,
-        height: 2,
+        width: 20,
+        height: 6,
         render: (id) => `
             <div class="widget-card h-full group relative">
                 <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
@@ -123,8 +123,8 @@ export const widgetTemplates = {
 
     'status-indicator': {
         title: 'Status',
-        width: 3,
-        height: 2,
+        width: 20,
+        height: 6,
         render: (id) => `
             <div class="widget-card h-full group relative">
                 <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
