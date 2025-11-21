@@ -5,16 +5,14 @@ export const widgetTemplates = {
         width: 3,
         height: 2,
         render: (id) => `
-            <div class="widget-card h-full">
-                <div class="widget-header">
-                    <h3 class="text-sm font-medium text-slate-200">Total Revenue</h3>
-                    <button onclick="removeWidget('${id}')" class="text-slate-500 hover:text-red-400 transition-snappy">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="widget-card h-full group relative">
+                <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
                 <div class="p-6 flex flex-col justify-center h-full">
+                    <div class="text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Total Revenue</div>
                     <div class="text-4xl font-bold text-sky-400 mb-2">RM 245.8K</div>
                     <div class="flex items-center gap-2 text-sm">
                         <span class="text-emerald-400 flex items-center gap-1">
@@ -35,26 +33,26 @@ export const widgetTemplates = {
         width: 6,
         height: 4,
         render: (id) => `
-            <div class="widget-card h-full">
-                <div class="widget-header">
-                    <h3 class="text-sm font-medium text-slate-200">Performance Trend</h3>
-                    <button onclick="removeWidget('${id}')" class="text-slate-500 hover:text-red-400 transition-snappy">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="p-4 h-full flex items-center justify-center">
-                    <svg class="w-full h-full max-h-48" viewBox="0 0 400 200">
-                        <defs>
-                            <linearGradient id="grad-${id}" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:rgb(14,165,233);stop-opacity:0.3" />
-                                <stop offset="100%" style="stop-color:rgb(14,165,233);stop-opacity:0" />
-                            </linearGradient>
-                        </defs>
-                        <polyline fill="url(#grad-${id})" points="0,180 50,150 100,130 150,140 200,90 250,100 300,60 350,80 400,40 400,200 0,200" />
-                        <polyline fill="none" stroke="rgb(14,165,233)" stroke-width="2" points="0,180 50,150 100,130 150,140 200,90 250,100 300,60 350,80 400,40" />
+            <div class="widget-card h-full group relative">
+                <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
+                </button>
+                <div class="p-4 h-full flex flex-col">
+                    <div class="text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">Performance Trend</div>
+                    <div class="flex-1 flex items-center justify-center overflow-hidden">
+                        <svg class="w-full h-full max-h-48" viewBox="0 0 400 200" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="grad-${id}" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:rgb(14,165,233);stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:rgb(14,165,233);stop-opacity:0" />
+                                </linearGradient>
+                            </defs>
+                            <polyline fill="url(#grad-${id})" points="0,180 50,150 100,130 150,140 200,90 250,100 300,60 350,80 400,40 400,200 0,200" />
+                            <polyline fill="none" stroke="rgb(14,165,233)" stroke-width="2" points="0,180 50,150 100,130 150,140 200,90 250,100 300,60 350,80 400,40" />
+                        </svg>
+                    </div>
                 </div>
             </div>
         `
@@ -65,35 +63,35 @@ export const widgetTemplates = {
         width: 6,
         height: 4,
         render: (id) => `
-            <div class="widget-card h-full">
-                <div class="widget-header">
-                    <h3 class="text-sm font-medium text-slate-200">Monthly Comparison</h3>
-                    <button onclick="removeWidget('${id}')" class="text-slate-500 hover:text-red-400 transition-snappy">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="p-4 h-full flex items-end justify-around gap-2">
-                    <div class="flex flex-col items-center flex-1">
-                        <div class="w-full bg-indigo-500/30 rounded-t" style="height: 60%"></div>
-                        <span class="text-xs text-slate-500 mt-2">Jan</span>
-                    </div>
-                    <div class="flex flex-col items-center flex-1">
-                        <div class="w-full bg-indigo-500/30 rounded-t" style="height: 75%"></div>
-                        <span class="text-xs text-slate-500 mt-2">Feb</span>
-                    </div>
-                    <div class="flex flex-col items-center flex-1">
-                        <div class="w-full bg-indigo-500/30 rounded-t" style="height: 90%"></div>
-                        <span class="text-xs text-slate-500 mt-2">Mar</span>
-                    </div>
-                    <div class="flex flex-col items-center flex-1">
-                        <div class="w-full bg-indigo-500 rounded-t" style="height: 100%"></div>
-                        <span class="text-xs text-slate-400 mt-2 font-medium">Apr</span>
-                    </div>
-                    <div class="flex flex-col items-center flex-1">
-                        <div class="w-full bg-indigo-500/30 rounded-t" style="height: 45%"></div>
-                        <span class="text-xs text-slate-500 mt-2">May</span>
+            <div class="widget-card h-full group relative">
+                <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="p-4 h-full flex flex-col">
+                    <div class="text-xs font-medium text-slate-400 mb-2 uppercase tracking-wider">Monthly Comparison</div>
+                    <div class="flex-1 flex items-end justify-around gap-2">
+                        <div class="flex flex-col items-center flex-1 h-full justify-end">
+                            <div class="w-full bg-indigo-500/30 rounded-t" style="height: 60%"></div>
+                            <span class="text-xs text-slate-500 mt-2">Jan</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-full justify-end">
+                            <div class="w-full bg-indigo-500/30 rounded-t" style="height: 75%"></div>
+                            <span class="text-xs text-slate-500 mt-2">Feb</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-full justify-end">
+                            <div class="w-full bg-indigo-500/30 rounded-t" style="height: 90%"></div>
+                            <span class="text-xs text-slate-500 mt-2">Mar</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-full justify-end">
+                            <div class="w-full bg-indigo-500 rounded-t" style="height: 100%"></div>
+                            <span class="text-xs text-slate-400 mt-2 font-medium">Apr</span>
+                        </div>
+                        <div class="flex flex-col items-center flex-1 h-full justify-end">
+                            <div class="w-full bg-indigo-500/30 rounded-t" style="height: 45%"></div>
+                            <span class="text-xs text-slate-500 mt-2">May</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,16 +103,14 @@ export const widgetTemplates = {
         width: 3,
         height: 2,
         render: (id) => `
-            <div class="widget-card h-full">
-                <div class="widget-header">
-                    <h3 class="text-sm font-medium text-slate-200">Active Users</h3>
-                    <button onclick="removeWidget('${id}')" class="text-slate-500 hover:text-red-400 transition-snappy">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+            <div class="widget-card h-full group relative">
+                <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
                 <div class="p-6 flex flex-col justify-center h-full">
+                    <div class="text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">Active Users</div>
                     <div class="flex items-baseline gap-2 mb-2">
                         <div class="text-4xl font-bold text-amber-400" id="live-value-${id}">1,247</div>
                         <div class="w-2 h-2 bg-amber-400 rounded-full animate-pulse-glow"></div>
@@ -130,16 +126,14 @@ export const widgetTemplates = {
         width: 3,
         height: 2,
         render: (id) => `
-            <div class="widget-card h-full">
-                <div class="widget-header">
-                    <h3 class="text-sm font-medium text-slate-200">System Status</h3>
-                    <button onclick="removeWidget('${id}')" class="text-slate-500 hover:text-red-400 transition-snappy">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="p-4 space-y-3">
+            <div class="widget-card h-full group relative">
+                <button onclick="removeWidget('${id}')" class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 text-slate-500 hover:text-red-400 transition-snappy z-10 p-1 rounded hover:bg-white/5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <div class="p-4 space-y-3 h-full flex flex-col justify-center">
+                    <div class="text-xs font-medium text-slate-400 mb-1 uppercase tracking-wider">System Status</div>
                     <div class="flex items-center justify-between">
                         <span class="text-sm text-slate-400">API Server</span>
                         <div class="flex items-center gap-2">

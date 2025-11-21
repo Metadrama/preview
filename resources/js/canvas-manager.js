@@ -14,7 +14,7 @@ export function initializeCanvas() {
 
     grid = GridStack.init({
         cellHeight: 60,
-        margin: 8,
+        margin: 0, // Disable JS margin, handle via CSS padding for consistency
         minRow: 1,
         column: 12,
         animate: true,
