@@ -3,7 +3,7 @@
     <div class="flex items-center h-full gap-2" id="tab-container">
         <!-- Tabs will be rendered here -->
         <div class="tab tab-active flex items-center gap-2 px-4 h-10 cursor-pointer group select-none" data-tab-id="1">
-            <span class="text-sm font-medium">Dashboard 1</span>
+            <span class="text-sm font-medium truncate max-w-[150px]">Dashboard 1</span>
             <button class="ml-1 opacity-0 group-hover:opacity-100 theme-icon-button transition-smooth p-0.5 rounded" onclick="closeTab(event, '1')">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -55,7 +55,7 @@
         newTab.className = 'tab tab-active flex items-center gap-2 px-4 h-10 cursor-pointer group select-none';
         newTab.dataset.tabId = tabId;
         newTab.innerHTML = `
-            <span class="text-sm font-medium">Dashboard ${tabCounter}</span>
+            <span class="text-sm font-medium truncate max-w-[150px]">Dashboard ${tabCounter}</span>
             <button class="ml-1 opacity-0 group-hover:opacity-100 theme-icon-button transition-smooth p-0.5 rounded" onclick="closeTab(event, '${tabId}')">
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
