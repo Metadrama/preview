@@ -53,6 +53,8 @@
     --divider: rgba(255, 255, 255, 0.1);
     --soft-divider: rgba(255, 255, 255, 0.05);
     --hover-faint: rgba(255, 255, 255, 0.08);
+
+    --shadow-refined: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 :root[data-theme="industrial-light"] {
@@ -94,6 +96,8 @@
     --divider: rgba(148, 163, 184, 0.3);
     --soft-divider: rgba(148, 163, 184, 0.18);
     --hover-faint: rgba(148, 163, 184, 0.12);
+
+    --shadow-refined: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* ============================================
@@ -352,9 +356,7 @@ body {
 }
 
 .shadow-refined {
-    box-shadow:
-        0 4px 6px -1px rgba(0, 0, 0, 0.3),
-        0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-refined);
 }
 
 .shadow-refined-lg {
