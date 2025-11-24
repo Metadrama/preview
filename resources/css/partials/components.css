@@ -42,6 +42,16 @@
     border-color: var(--glass-border);
 }
 
+.widget-card {
+    background: var(--widget-bg);
+    border: 1px solid var(--widget-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .widget-card:hover {
     border-color: var(--widget-hover-border);
     box-shadow:
