@@ -43,7 +43,7 @@
             </div>
 
             <!-- Theme Toggle -->
-            <button id="theme-toggle" class="glass-light theme-icon-button flex items-center gap-2 px-3 py-1.5 rounded-lg transition-smooth" title="Toggle theme mode">
+            <button id="theme-toggle" onclick="toggleMode()" class="glass-light theme-icon-button flex items-center gap-2 px-3 py-1.5 rounded-lg transition-smooth" title="Toggle theme mode">
                 <span class="flex items-center gap-1">
                     <svg data-icon="sun" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.95 6.95-1.414-1.414M6.464 6.464 5.05 5.05m12.9 0-1.414 1.414M6.464 17.536 5.05 18.95M12 8a4 4 0 100 8 4 4 0 000-8z" />
@@ -204,13 +204,7 @@
     // Theme Logic
     function setTheme(themeName) {
         const root = document.documentElement;
-        
-        if (themeName === 'default') {
-            root.removeAttribute('data-theme');
-        } else {
-            root.setAttribute('data-theme', themeName);
-        }
-
+        root.setAttribute('data-theme', themeName);
         localStorage.setItem('app-theme', themeName);
         updateThemeUI();
     }
@@ -222,9 +216,29 @@
         updateThemeUI();
     }
 
+    function toggleMode() {
+        const currentMode = localStorage.getItem('app-mode') || 'dark';
+        const newMode = currentMode === 'light' ? 'dark' : 'light';
+        setMode(newMode);
+    }
+
     function updateThemeUI() {
         const currentTheme = localStorage.getItem('app-theme') || 'default';
         const currentMode = localStorage.getItem('app-mode') || 'dark'; // Default to dark
+
+        // Update Navbar Icons
+        const sunIcon = document.querySelector('#theme-toggle [data-icon="sun"]');
+        const moonIcon = document.querySelector('#theme-toggle [data-icon="moon"]');
+        
+        if (sunIcon && moonIcon) {
+            if (currentMode === 'dark') {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
 
         // Update Theme Selection UI
         document.querySelectorAll('.theme-option').forEach(btn => {
