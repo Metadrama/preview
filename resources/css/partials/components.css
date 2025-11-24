@@ -113,11 +113,14 @@
 .grid-stack-item {
     transition: none;
     padding: 0 !important;
+    overflow: visible !important;
 }
 
 .grid-stack-item-content {
-    overflow: hidden;
-    /* the padding between card */
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    /* allow hover lift/drop-shadow to extend beyond the inset without clipping */
     inset: 4px !important;
     position: absolute !important;
     top: 4px !important;
