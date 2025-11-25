@@ -103,8 +103,20 @@ class GoogleSheetsService
             return ['headers' => [], 'rows' => []];
         }
 
+        // Skip empty rows at the top to find actual headers
+        $headers = [];
+        while (!empty($data)) {
+            $firstRow = array_shift($data);
+            // Check if row has any non-empty values
+            $nonEmptyValues = array_filter($firstRow, fn($value) => !empty(trim($value ?? '')));
+            if (!empty($nonEmptyValues)) {
+                $headers = $firstRow;
+                break;
+            }
+        }
+
         return [
-            'headers' => array_shift($data), // First row as headers
+            'headers' => $headers,
             'rows' => $data,
         ];
     }
@@ -123,8 +135,20 @@ class GoogleSheetsService
             return ['headers' => [], 'rows' => []];
         }
 
+        // Skip empty rows at the top to find actual headers
+        $headers = [];
+        while (!empty($data)) {
+            $firstRow = array_shift($data);
+            // Check if row has any non-empty values
+            $nonEmptyValues = array_filter($firstRow, fn($value) => !empty(trim($value ?? '')));
+            if (!empty($nonEmptyValues)) {
+                $headers = $firstRow;
+                break;
+            }
+        }
+
         return [
-            'headers' => array_shift($data),
+            'headers' => $headers,
             'rows' => $data,
         ];
     }

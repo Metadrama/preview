@@ -138,4 +138,28 @@ class DashboardController extends Controller
                 : 'Failed to connect to Google Sheets API',
         ], $isConnected ? 200 : 500);
     }
+
+    /**
+     * Debug endpoint to view raw sheet structure
+     *
+     * @return JsonResponse
+     */
+    public function debugSheet(): JsonResponse
+    {
+        try {
+            $poData = $this->sheetsService->getPurchaseOrders();
+            
+            return response()->json([
+                'success' => true,
+                'headers' => $poData['headers'],
+                'first_5_rows' => array_slice($poData['rows'], 0, 5),
+                'total_rows' => count($poData['rows']),
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
 }

@@ -14,4 +14,5 @@ Route::prefix('api/dashboard')->group(function () {
     Route::get('/vendors', [DashboardController::class, 'getVendors']);
     Route::post('/cache/clear', [DashboardController::class, 'clearCache']);
     Route::get('/test-connection', [DashboardController::class, 'testConnection']);
+    Route::get('/debug-sheet', [DashboardController::class, 'debugSheet']); // Debug endpoint
 });
