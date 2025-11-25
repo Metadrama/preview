@@ -17,7 +17,7 @@
             <div class="widget-category">
                 <div class="text-xs font-bold theme-muted-text uppercase tracking-wider mb-3 sidebar-text px-2">Charts</div>
                 
-                <div class="widget-tool" data-widget-type="line-chart" draggable="true">
+                <div class="widget-tool" data-widget-type="po-trends-chart" draggable="true">
                     <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-move transition-smooth border border-transparent hover:border-primary/30 group">
                         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500/20 to-sky-600/10 flex items-center justify-center flex-shrink-0 group-hover:from-sky-500/30 group-hover:to-sky-600/20 transition-smooth">
                             <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -25,13 +25,13 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium theme-strong-text">Line Chart</div>
-                            <div class="text-xs theme-muted-text">Time series data</div>
+                            <div class="text-sm font-medium theme-strong-text">PO Trends</div>
+                            <div class="text-xs theme-muted-text">12-month timeline</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="widget-tool" data-widget-type="bar-chart" draggable="true">
+                <div class="widget-tool" data-widget-type="category-analysis-chart" draggable="true">
                     <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-move transition-smooth border border-transparent hover:border-primary/30 group">
                         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-indigo-600/10 flex items-center justify-center flex-shrink-0 group-hover:from-indigo-500/30 group-hover:to-indigo-600/20 transition-smooth">
                             <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,8 +39,23 @@
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium theme-strong-text">Bar Chart</div>
-                            <div class="text-xs theme-muted-text">Comparative data</div>
+                            <div class="text-sm font-medium theme-strong-text">Category Analysis</div>
+                            <div class="text-xs theme-muted-text">Top 10 categories</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-tool" data-widget-type="vendor-concentration-chart" draggable="true">
+                    <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-move transition-smooth border border-transparent hover:border-primary/30 group">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-500/20 to-violet-600/10 flex items-center justify-center flex-shrink-0 group-hover:from-violet-500/30 group-hover:to-violet-600/20 transition-smooth">
+                            <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                            </svg>
+                        </div>
+                        <div class="sidebar-text">
+                            <div class="text-sm font-medium theme-strong-text">Vendor Distribution</div>
+                            <div class="text-xs theme-muted-text">Top 10 vendors</div>
                         </div>
                     </div>
                 </div>
@@ -50,16 +65,16 @@
             <div class="widget-category mt-5">
                 <div class="text-xs font-bold theme-muted-text uppercase tracking-wider mb-3 sidebar-text px-2">Metrics</div>
                 
-                <div class="widget-tool" data-widget-type="kpi-card" draggable="true">
+                <div class="widget-tool" data-widget-type="kpi-panel" draggable="true">
                     <div class="flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 cursor-move transition-smooth border border-transparent hover:border-primary/30 group">
                         <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 flex items-center justify-center flex-shrink-0 group-hover:from-emerald-500/30 group-hover:to-emerald-600/20 transition-smooth">
                             <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </div>
                         <div class="sidebar-text">
-                            <div class="text-sm font-medium theme-strong-text">KPI Card</div>
-                            <div class="text-xs theme-muted-text">Key metric display</div>
+                            <div class="text-sm font-medium theme-strong-text">KPI Panel</div>
+                            <div class="text-xs theme-muted-text">4 key metrics</div>
                         </div>
                     </div>
                 </div>

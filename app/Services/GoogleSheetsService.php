@@ -103,22 +103,52 @@ class GoogleSheetsService
             return ['headers' => [], 'rows' => []];
         }
 
-        // Skip empty rows at the top to find actual headers
+        // Find header row by looking for expected column names
         $headers = [];
-        while (!empty($data)) {
-            $firstRow = array_shift($data);
-            // Check if row has any non-empty values
-            $nonEmptyValues = array_filter($firstRow, fn($value) => !empty(trim($value ?? '')));
-            if (!empty($nonEmptyValues)) {
-                $headers = $firstRow;
-                break;
+        $expectedHeaders = ['Purchase Order Number', 'Vendor', 'Category', 'Status', 'Total Amount'];
+        
+        foreach ($data as $index => $row) {
+            // Check if row has non-empty values
+            $nonEmptyValues = array_filter($row, fn($value) => !empty(trim($value ?? '')));
+            
+            if (empty($nonEmptyValues)) {
+                continue; // Skip completely empty rows
+            }
+            
+            // Check if this looks like a header row (contains expected column names)
+            $matchCount = 0;
+            foreach ($expectedHeaders as $expectedHeader) {
+                foreach ($row as $cell) {
+                    if (stripos($cell, $expectedHeader) !== false) {
+                        $matchCount++;
+                        break;
+                    }
+                }
+            }
+            
+            // If at least 3 expected headers found, consider this the header row
+            if ($matchCount >= 3) {
+                $headers = $row;
+                // Return rows after this header row
+                return [
+                    'headers' => $headers,
+                    'rows' => array_slice($data, $index + 1),
+                ];
             }
         }
 
-        return [
-            'headers' => $headers,
-            'rows' => $data,
-        ];
+        // Fallback: use first non-empty row as headers
+        foreach ($data as $index => $row) {
+            $nonEmptyValues = array_filter($row, fn($value) => !empty(trim($value ?? '')));
+            if (!empty($nonEmptyValues)) {
+                return [
+                    'headers' => $row,
+                    'rows' => array_slice($data, $index + 1),
+                ];
+            }
+        }
+
+        return ['headers' => [], 'rows' => []];
     }
 
     /**
@@ -135,22 +165,52 @@ class GoogleSheetsService
             return ['headers' => [], 'rows' => []];
         }
 
-        // Skip empty rows at the top to find actual headers
+        // Find header row by looking for expected column names
         $headers = [];
-        while (!empty($data)) {
-            $firstRow = array_shift($data);
-            // Check if row has any non-empty values
-            $nonEmptyValues = array_filter($firstRow, fn($value) => !empty(trim($value ?? '')));
-            if (!empty($nonEmptyValues)) {
-                $headers = $firstRow;
-                break;
+        $expectedHeaders = ['Vendor', 'Name', 'Contact'];
+        
+        foreach ($data as $index => $row) {
+            // Check if row has non-empty values
+            $nonEmptyValues = array_filter($row, fn($value) => !empty(trim($value ?? '')));
+            
+            if (empty($nonEmptyValues)) {
+                continue; // Skip completely empty rows
+            }
+            
+            // Check if this looks like a header row (contains expected column names)
+            $matchCount = 0;
+            foreach ($expectedHeaders as $expectedHeader) {
+                foreach ($row as $cell) {
+                    if (stripos($cell, $expectedHeader) !== false) {
+                        $matchCount++;
+                        break;
+                    }
+                }
+            }
+            
+            // If at least 2 expected headers found, consider this the header row
+            if ($matchCount >= 2) {
+                $headers = $row;
+                // Return rows after this header row
+                return [
+                    'headers' => $headers,
+                    'rows' => array_slice($data, $index + 1),
+                ];
             }
         }
 
-        return [
-            'headers' => $headers,
-            'rows' => $data,
-        ];
+        // Fallback: use first non-empty row as headers
+        foreach ($data as $index => $row) {
+            $nonEmptyValues = array_filter($row, fn($value) => !empty(trim($value ?? '')));
+            if (!empty($nonEmptyValues)) {
+                return [
+                    'headers' => $row,
+                    'rows' => array_slice($data, $index + 1),
+                ];
+            }
+        }
+
+        return ['headers' => [], 'rows' => []];
     }
 
     /**
