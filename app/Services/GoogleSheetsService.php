@@ -44,7 +44,8 @@ class GoogleSheetsService
         $this->client->addScope(Sheets::SPREADSHEETS_READONLY);
 
         // Skip SSL verification if enabled (development only)
-        if (env('GOOGLE_API_SKIP_SSL_VERIFY', false)) {
+        $verifySSL = env('GOOGLE_SHEETS_VERIFY_SSL', true);
+        if (!$verifySSL) {
             $httpClient = new \GuzzleHttp\Client(['verify' => false]);
             $this->client->setHttpClient($httpClient);
         }
