@@ -6,7 +6,7 @@
             <span class="font-semibold text-lg theme-strong-text tracking-tight">wip - preview</span>
         </div>
 
-        <!-- Center: Quick Stats -->
+        <!-- Center: Quick Stats 
         <div class="flex items-center gap-6 text-sm theme-muted-text">
             <div class="flex items-center gap-2 theme-strong-text">
                 <div class="w-2 h-2 bg-emerald-400 rounded-full animate-glow shadow-[0_0_8px_rgba(52,211,153,0.6)]"></div>
@@ -18,7 +18,7 @@
                 </svg>
                 <span id="current-time">--:--:--</span>
             </div>
-        </div>
+        </div> -->
 
         <!-- Right: Actions -->
         <div class="flex items-center gap-3">
